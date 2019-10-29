@@ -1,5 +1,5 @@
 # Qt DHCP Server Discovery (Qt4+/Qt5+)
- [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb06e946714845fa9ae7d224f986e638)](https://www.codacy.com/manual/QuentinCG/QDhcpDiscovery?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=QuentinCG/QDhcpDiscovery&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/QuentinCG/QPortKnocking/blob/master/LICENSE)
+ [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb06e946714845fa9ae7d224f986e638)](https://www.codacy.com/manual/QuentinCG/QDhcpDiscovery?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=QuentinCG/QDhcpDiscovery&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/QuentinCG/QDhcpDiscovery/blob/master/LICENSE)
  
 ## What is it
 
