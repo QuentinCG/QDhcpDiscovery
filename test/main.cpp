@@ -37,7 +37,6 @@ TEST_CASE("Create and use instance with no DHCP server")
     REQUIRE_FALSE(error.isEmpty());
     qDebug() << "Returned error: " << error;
     REQUIRE(error.contains("No DHCP server found"));
-    REQUIRE(error.contains("Timeout"));
 }
 
 TEST_CASE("Use function without instance with no DHCP server")
@@ -49,7 +48,23 @@ TEST_CASE("Use function without instance with no DHCP server")
     REQUIRE_FALSE(error.isEmpty());
     qDebug() << "Returned error: " << error;
     REQUIRE(error.contains("No DHCP server found"));
-    REQUIRE(error.contains("Timeout"));
+}
+
+TEST_CASE("Failed receive response from invalid dhcp server")
+{
+    QUdpSocket *udpServer = new QUdpSocket();
+    udpServer->bind(QHostAddress(QHostAddress::SpecialAddress::Broadcast), 67);
+
+    QDhcpDiscovery dhcpDiscover;
+    QString error;
+
+    REQUIRE_FALSE(QDhcpDiscovery::isAvailable(QHostAddress(QHostAddress::SpecialAddress::Broadcast), 1000, error));
+    REQUIRE_FALSE(error.isEmpty());
+    qDebug() << "Returned error: " << error;
+    REQUIRE(error.contains("No DHCP server found"));
+
+    udpServer->close();
+    delete(udpServer);
 }
 
 TEST_CASE("Port already bind")
@@ -65,6 +80,7 @@ TEST_CASE("Port already bind")
     qDebug() << "Returned error: " << error;
     REQUIRE(error.contains("Impossible to bind port 68"));
 
+    udpServer->close();
     delete(udpServer);
 }
 
