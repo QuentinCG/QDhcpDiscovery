@@ -1,21 +1,14 @@
-QT += core
-QT += network
+TEMPLATE = subdirs
 
-QT -= gui
+CONFIG += ordered
 
-CONFIG += c++11
+SUBDIRS = lib \
+          example \
+          test \
 
-TARGET = QDhcpDiscovery
-CONFIG += console
-CONFIG -= app_bundle
+lib.subdir = lib
+example.subdir = example
+test.subdir = test
 
-TEMPLATE = app
-
-SOURCES += \
-           main.cpp \
-           src/QDhcpDiscovery.cpp
-
-HEADERS += \
-           include/QDhcpDiscovery.h
-
-INCLUDEPATH  =  include
+example.depends = lib
+test.depends = lib

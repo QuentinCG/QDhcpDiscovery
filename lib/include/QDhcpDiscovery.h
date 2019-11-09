@@ -18,7 +18,9 @@ class QDhcpDiscovery
 {
 
 public:
-  /*!
+    QDhcpDiscovery();
+
+    /*!
    * \brief Try to find a dhcp server
    *
    * \param[in] ipInterface Interface to search the dhcp server
@@ -29,10 +31,9 @@ public:
    *
    * \details Blocking function but allowing Qt events to execute during this function (QEventLoop::AllEvents)
    */
-  static bool isAvailable(const QHostAddress& ipInterface, const quint16& timoutInMs = 500, QString& error = QString());
+  static bool isAvailable(const QHostAddress& ipInterface, const quint16& timoutInMs, QString& error);
 
 private:
-  QDhcpDiscovery();
   static QByteArray getDiscoveryRequestFrame();
   static bool isDiscoveryResponseValid(const QByteArray& response, QString& error);
 
