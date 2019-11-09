@@ -215,7 +215,6 @@ bool QDhcpDiscovery::isAvailable(const QHostAddress& ipInterface, const quint16&
     }
     while (retries++ < timoutInMs / 250);
 
-
     error = QObject::tr("No DHCP server found in %1 interface: Timeout").arg(ipInterface.toString());
     return false;
 }
