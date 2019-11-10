@@ -11,11 +11,11 @@ This class works with any Qt4 and Qt5 version (only required libraries: QtNetwor
 
 ## How to install
 
-1) Download <a target="_blank" href="https://github.com/QuentinCG/QDhcpDiscovery/releases/download/1.0.0/QDhcpDiscovery_v1_0_0.zip">latest release</a> (and launch the exe file if you don't want to compile it)
+1) Download this repository
 
 2) Open the <a href="https://github.com/QuentinCG/QDhcpDiscovery/blob/master/QDhcpDiscovery.pro">QDhcpDiscovery.pro</a> project with <a href="https://download.qt.io/archive/qt/">QtCreator</a> (or add the QDhcpDiscovery library into your project like done in <a href="https://github.com/QuentinCG/QDhcpDiscovery/blob/master/example/example.pro">example project</a>)
 
-4) Build and launch the project to see the result in the command line (`example.exe 127.0.0.1`)
+3) Build and launch the project to see the result in the command line (`example.exe 127.0.0.1`, the library will also be generated)
 
 ## License
 
