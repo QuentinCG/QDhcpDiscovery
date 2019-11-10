@@ -14,7 +14,9 @@
 #include <QObject>
 #include <QtNetwork>
 
-class QDhcpDiscovery
+#include "QDhcpDiscovery_global.h"
+
+class QDHCPDISCOVERYSHARED_EXPORT QDhcpDiscovery
 {
 
 public:
