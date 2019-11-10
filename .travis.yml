@@ -38,11 +38,23 @@ matrix:
     - sudo apt update -qq
     - sudo apt install build-essential
     - sudo apt install qt5-default
+    # Dependency for test coverage
+    - sudo apt install python3-pip
+    - sudo pip3 install codecov
     compiler:
     - g++
     script:
+    # Build library (+example+test) in release (and with test coverage)
     - qmake CONFIG+=release QDhcpDiscovery.pro
     - make
+    # Launch test
+    - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/lib/
+    - export LD_LIBRARY_PATH
+    - ./test/test
+    # Launch test coverage
+    - sudo gcov -n -o . lib/src/QDhcpDiscovery.cpp > /dev/null
+    - codecov > /dev/null
+    # Build library (+example+test) in debug
     - make clean -j4
     - qmake CONFIG+=debug QDhcpDiscovery.pro
     - make
